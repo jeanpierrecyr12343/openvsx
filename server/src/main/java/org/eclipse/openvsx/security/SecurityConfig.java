@@ -85,6 +85,8 @@ public class SecurityConfig {
                                         "/api/-/publish",
                                         "/api/-/namespace/create",
                                         "/api/-/query",
+                                        // authenticated with a personal access token, not with a session
+                                        "/api/*/*/delete",
                                         "/vscode/**",
                                         "/admin/api/**")))
                 .exceptionHandling(configurer -> configurer.authenticationEntryPoint(new Http403ForbiddenEntryPoint()));
